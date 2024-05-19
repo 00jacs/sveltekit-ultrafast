@@ -27,5 +27,9 @@ module.exports = {
 				parser: '@typescript-eslint/parser'
 			}
 		}
-	]
+	],
+	rules: {
+		'svelte/first-attribute-linebreak': 'off',
+		'svelte/html-closing-bracket-spacing': 'off'
+	}
 };

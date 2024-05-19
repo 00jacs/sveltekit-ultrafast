@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+* Basic overrides for the default DaisyUI
+* theme. You can add more custom styles.
+*/
+
+/* Each input will have a height of 2.25rem (36px) */
+.input {
+	@apply h-9 px-3 py-2 text-sm;
+}
+
+.btn {
+	@apply h-auto min-h-0 px-3 py-2 text-sm;
+}
+
+/* Modify this depending on your own color set */
+.text-base-content-secondary {
+	@apply text-gray-500;
+}
