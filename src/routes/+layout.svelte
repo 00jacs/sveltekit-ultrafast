@@ -4,6 +4,7 @@
 	import { invalidateAll } from '$app/navigation';
 	import { supabase } from '$lib/supabase';
 	import { Notifications } from '$lib/components';
+	import NavigationHeader from '$lib/components/page/navigation-header/navigation-header.svelte';
 
 	/**
 	 * Listen for changes in authentication state
@@ -20,6 +21,12 @@
 		return () => subscription?.unsubscribe();
 	});
 </script>
+
+<!--
+    Navigation header with the logo and the navigation links
+    You can customize it to fit your needs.
+-->
+<NavigationHeader />
 
 <!--
     Container for all the notifications

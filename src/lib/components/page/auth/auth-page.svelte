@@ -6,7 +6,7 @@
 -->
 
 <script lang="ts">
-	import { TextInput, Checkbox } from '$lib/components';
+	import { Button, InputText, Checkbox } from '$lib/components';
 	import { Icon, ExclamationCircle } from 'svelte-hero-icons';
 
 	enum AuthMode {
@@ -23,7 +23,7 @@
 <div class="flex min-h-full flex-col justify-center bg-base-200 py-12 sm:px-6 lg:px-8">
 	<!-- Header with title and your logo -->
 	<header class="sm:mx-auto sm:w-full sm:max-w-md">
-		<enhanced:img class="mx-auto h-10 w-auto" src="$lib/assets/your-logo.svg" />
+		<enhanced:img class="mx-auto h-10 w-auto" src="$lib/assets/logo.svg" />
 
 		<h2 class="mt-6 text-center text-3xl font-semibold leading-9">
 			{mode === AuthMode.LOGIN ? 'Sign in to your account' : 'Create your account'}
@@ -46,7 +46,7 @@
 				class="flex flex-col gap-y-6"
 				action={mode === AuthMode.LOGIN ? '?/login' : '?/signup'}
 				method="POST">
-				<TextInput
+				<InputText
 					id="email"
 					name="email"
 					type="email"
@@ -55,7 +55,7 @@
 					required
 					label="Email" />
 
-				<TextInput
+				<InputText
 					id="password"
 					name="password"
 					type="password"
@@ -65,7 +65,7 @@
 					label="Password" />
 
 				{#if mode === AuthMode.REGISTER}
-					<TextInput
+					<InputText
 						id="confirm-password"
 						name="password"
 						type="password"
@@ -89,11 +89,9 @@
 					</div>
 				{/if}
 
-				<div>
-					<button type="submit" class="btn btn-primary w-full">
-						{mode === AuthMode.LOGIN ? 'Sign in' : 'Sign up'}
-					</button>
-				</div>
+				<Button type="submit" class="btn-primary w-full">
+					{mode === AuthMode.LOGIN ? 'Sign in' : 'Sign up'}
+				</Button>
 			</form>
 
 			<div>
@@ -108,21 +106,17 @@
 
 				<div class="mt-6 grid grid-cols-2 gap-4">
 					<form action="?/loginWithGoogle" method="POST">
-						<button
-							type="submit"
-							class="flex w-full items-center justify-center gap-3 rounded-md px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset focus-visible:ring-transparent">
+						<Button type="submit" class="w-full">
 							<enhanced:img src="$lib/assets/icons/google.svg" class="h-5 w-5" />
 							<span class="text-sm font-semibold leading-6">Google</span>
-						</button>
+						</Button>
 					</form>
 
 					<form action="?/loginWithGithub" method="POST">
-						<button
-							type="submit"
-							class="flex w-full items-center justify-center gap-3 rounded-md px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset focus-visible:ring-transparent">
+						<Button type="submit" class="w-full">
 							<enhanced:img src="$lib/assets/icons/github.svg" class="h-6 w-6" />
 							<span class="text-sm font-semibold leading-6">Github</span>
-						</button>
+						</Button>
 					</form>
 				</div>
 			</div>

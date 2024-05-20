@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Button } from '$lib/components';
 	export let data;
 </script>
 
@@ -6,7 +7,7 @@
 {#if data.session}
 	<p>Welcome, {data.session.user.email}</p>
 	<form action="?/auth/logout" method="POST">
-		<button type="submit" class="btn btn-primary"> Logout </button>
+		<Button type="submit" class="btn-primary">Logout</Button>
 	</form>
 {:else}
 	<p>You are not logged in.</p>
