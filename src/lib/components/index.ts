@@ -2,6 +2,7 @@ import Button from './common/button/button.svelte';
 import InputText from './common/input-text/input-text.svelte';
 import InputNumber from './common/input-number/input-number.svelte';
 import Checkbox from './common/checkbox/checkbox.svelte';
+import Popover from './common/popover/popover.svelte';
 
 // A standard notifications container component,
 // with a store and a function to add notifications
@@ -17,6 +18,7 @@ export {
 	InputText,
 	InputNumber,
 	Checkbox,
+	Popover,
 	NavigationHeader,
 	Notifications,
 	notify
