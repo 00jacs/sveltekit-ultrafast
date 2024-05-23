@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { InputText, Button } from '$lib/components';
+	import { enhance } from '$app/forms';
+	import { InputText, Button, notify } from '$lib/components';
 
 	export let data;
+	export let form;
 
-	export let form = {
-		message: ''
-	};
+	$: if (form?.success) {
+		notify('success', 'Country added successfully.');
+	}
 </script>
 
 <div class="mx-auto my-8 max-w-xl px-8 py-8">
@@ -27,7 +29,7 @@
 	<div class="divider mb-4"></div>
 
 	<h2 class="mb-4 text-xl font-semibold">Add country</h2>
-	<form action="?/createCountry" method="POST" class="mb-2">
+	<form action="?/createCountry" method="POST" class="mb-2" use:enhance>
 		{#if form?.message}
 			<p class="mb-4 text-error">
 				<span class="font-bold">Error: </span>
@@ -42,7 +44,9 @@
 			placeholder="Country name"
 			required
 			label="Country name"
-			containerClass="mb-4" />
+			containerClass="mb-4"
+			value={form?.formData?.name}
+			error={form?.errors?.fieldErrors?.name?.[0]} />
 
 		<InputText
 			id="iso2"
@@ -51,7 +55,9 @@
 			placeholder="CK"
 			required
 			label="ISO-2 Country Code"
-			containerClass="mb-4" />
+			containerClass="mb-4"
+			value={form?.formData?.iso2}
+			error={form?.errors?.fieldErrors?.iso2?.[0]} />
 
 		<InputText
 			id="iso3"
@@ -60,7 +66,9 @@
 			placeholder="CK"
 			required
 			label="ISO-3 Country Code"
-			containerClass="mb-4" />
+			containerClass="mb-4"
+			value={form?.formData?.iso3}
+			error={form?.errors?.fieldErrors?.iso3?.[0]} />
 
 		<Button type="submit" class="btn-primary">Add country</Button>
 	</form>

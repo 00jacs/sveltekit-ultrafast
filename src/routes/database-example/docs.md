@@ -52,3 +52,18 @@ You can follow the example form of creating a country which shows how to insert 
 Most likely, more validation before insertion should be implemented, but it's just a simple example.
 
 For additional validation, you could use [zod](https://zod.dev/) which is a great library for it.
+
+### 5. Additional form validation
+
+Here's a code snippet also included in the example:
+
+```TypeScript
+const CountryCreateSchema = zfd.formData({
+	name: zfd.text(z.string().min(2, 'Name must be at least 2 characters long')),
+	iso2: zfd.text(z.string().length(2, 'ISO2 must be exactly 2 characters long')),
+	iso3: zfd.text(z.string().length(3, 'ISO3 must be exactly 3 characters long'))
+});
+
+which allows you to define your custom validation schemas for your forms with custom error messages which will show up to the user next to each form field.
+
+```
