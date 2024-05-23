@@ -5,6 +5,9 @@
 		LOGIN = 'login',
 		REGISTER = 'register'
 	}
+
+	export let form;
 </script>
 
-<AuthPage mode={AuthMode.LOGIN} />
+<!-- @TODO: Solve this TypeScript issue -->
+<AuthPage mode={AuthMode.LOGIN} {form} />

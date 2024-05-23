@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
-	export let id: string = '';
+	export let id: string | undefined = undefined;
 	export let name: string = '';
 	export let checked: boolean = false;
 	export let label: string = '';

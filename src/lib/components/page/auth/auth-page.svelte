@@ -6,8 +6,10 @@
 -->
 
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { Button, InputText, Checkbox } from '$lib/components';
 	import { Icon, ExclamationCircle } from 'svelte-hero-icons';
+	import z from 'zod';
 
 	enum AuthMode {
 		LOGIN = 'login',
@@ -15,8 +17,18 @@
 	}
 
 	export let mode: AuthMode = AuthMode.LOGIN;
-	export let form = {
-		message: ''
+	export let form: {
+		message: string;
+		errors:
+			| z.typeToFlattenedError<{
+					email: string;
+					password: string;
+					confirmPassword: string;
+			  }>
+			| undefined;
+	} = {
+		message: '',
+		errors: undefined
 	};
 </script>
 
@@ -34,7 +46,7 @@
 	<main class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
 		<div class="bg-base-100 px-6 py-10 shadow sm:rounded-lg sm:px-12">
 			{#if form?.message}
-				<div class="mb-6 flex items-center gap-2 rounded bg-error p-4 text-error-content">
+				<div class="mb-6 flex gap-2 rounded text-error">
 					<Icon src={ExclamationCircle} class="h-5 w-5" />
 					<p class="text-sm font-bold">
 						{form?.message}
@@ -45,7 +57,8 @@
 			<form
 				class="flex flex-col gap-y-6"
 				action={mode === AuthMode.LOGIN ? '?/login' : '?/signup'}
-				method="POST">
+				method="POST"
+				use:enhance>
 				<InputText
 					id="email"
 					name="email"
@@ -53,7 +66,8 @@
 					placeholder="Your email address"
 					autocomplete="email"
 					required
-					label="Email" />
+					label="Email"
+					error={form?.errors?.fieldErrors?.email?.[0]} />
 
 				<InputText
 					id="password"
@@ -62,16 +76,18 @@
 					autocomplete="current-password"
 					placeholder="Choose your password"
 					required
-					label="Password" />
+					label="Password"
+					error={form?.errors?.fieldErrors?.password?.[0]} />
 
 				{#if mode === AuthMode.REGISTER}
 					<InputText
-						id="confirm-password"
-						name="password"
+						id="confirmPassword"
+						name="confirmPassword"
 						type="password"
 						placeholder="Confirm your password"
 						required
-						label="Confirm password" />
+						label="Confirm password"
+						error={form?.errors?.fieldErrors?.confirmPassword?.[0]} />
 				{:else}
 					<div class="flex items-center justify-between">
 						<Checkbox

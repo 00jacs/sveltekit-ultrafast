@@ -10,7 +10,7 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let id = '';
+	export let id: string | undefined = undefined;
 	export let type: 'button' | 'submit' | 'reset' = 'button';
 	export let loading = false;
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let id: string = '';
-	export let name: string = '';
+	export let id: string | undefined = undefined;
+	export let name: string | undefined = undefined;
 	export let type: 'text' | 'email' | 'password' = 'text';
 	export let autocomplete: string = '';
 	export let placeholder = '';

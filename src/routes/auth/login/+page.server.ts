@@ -1,21 +1,44 @@
 import type { Actions } from './$types';
-import { redirect } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { PUBLIC_DOMAIN_URL } from '$env/static/public';
 import { logger } from '$lib/utils/logger';
+import z from 'zod';
+import { zfd } from 'zod-form-data';
+import { formDataToObject } from '$lib/utils/form';
+
+const LoginUserSchema = zfd.formData({
+	email: zfd.text(z.string().email('Invalid email address')),
+	password: zfd.text(z.string().min(6, 'At least 6 characters'))
+});
+
+type LoginUserSchema = z.infer<typeof LoginUserSchema>;
 
 export const actions: Actions = {
 	login: async ({ request, locals: { supabase } }) => {
 		const formData = await request.formData();
-		const email = formData.get('email') as string;
-		const password = formData.get('password') as string;
+		let user: LoginUserSchema;
 
-		const { error } = await supabase.auth.signInWithPassword({ email, password });
+		try {
+			user = LoginUserSchema.parse(formData);
+		} catch (e) {
+			logger.info('[auth] Invalid form data: ', e);
+			return fail(400, {
+				message: 'Invalid form data',
+				errors: e instanceof z.ZodError ? e.flatten() : null,
+				formData: formDataToObject<LoginUserSchema>(formData)
+			});
+		}
+
+		const { error } = await supabase.auth.signInWithPassword({ ...user });
 
 		if (error) {
 			logger.info('[auth] Coud not log in the user: ', error);
-			return redirect(303, '/auth/error');
+			return fail(400, {
+				message: 'Could not log in. Please check your email and password.',
+				formData: formDataToObject<LoginUserSchema>(formData)
+			});
 		} else {
-			logger.success('[auth] User logged in successfully; email: ' + email);
+			logger.success('[auth] User logged in successfully; email: ' + user.email);
 			return redirect(303, '/private');
 		}
 	},

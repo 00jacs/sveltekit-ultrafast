@@ -10,6 +10,10 @@ export function formDataToObject<T>(formData: FormData): T {
 	const object: Record<string, any> = {}; // use any for mixed type handling
 
 	formData.forEach((value, key) => {
+		// skip password fields, we do not want
+		// to get them back to the client
+		if (key?.includes('password')) return;
+
 		if (Object.prototype.hasOwnProperty.call(object, key)) {
 			if (!Array.isArray(object[key])) {
 				object[key] = [object[key]];

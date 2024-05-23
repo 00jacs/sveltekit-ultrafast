@@ -3,8 +3,10 @@
 	import { Icon, XMark } from 'svelte-hero-icons';
 
 	export let open: boolean;
-	export let id = '';
-	export let css = '';
+	export let id: string | undefined = undefined;
+
+	let className = '';
+	export { className as class };
 
 	// you can also disable this by setting it to false
 	// and display the icon in the popover container yourself
@@ -31,7 +33,7 @@
 	}
 </script>
 
-<dialog {id} class={`modal ${css}`} bind:this={element} on:close={handleClose}>
+<dialog {id} class="modal {className}" bind:this={element} on:close={handleClose}>
 	<div class="border-1 modal-box relative border-solid border-base-300">
 		{#if withCloseIcon}
 			<button class="absolute right-4 top-4" on:click={handleClose}>
