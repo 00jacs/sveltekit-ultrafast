@@ -17,6 +17,10 @@
 }
 
 /* Modify this depending on your own color set */
-.text-base-content-secondary {
+html[data-theme='dark'] .text-base-content-secondary {
+	@apply text-gray-300;
+}
+
+html[data-theme='light'] .text-base-content-secondary {
 	@apply text-gray-500;
 }

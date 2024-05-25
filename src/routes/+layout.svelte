@@ -20,13 +20,22 @@
 
 		return () => subscription?.unsubscribe();
 	});
+
+	let theme: 'dark' | 'light' = 'dark';
+
+	function toggleTheme() {
+		theme = theme === 'light' ? 'dark' : 'light';
+		document.documentElement.setAttribute('data-theme', theme);
+	}
 </script>
 
 <!--
     Navigation header with the logo and the navigation links
     You can customize it to fit your needs.
 -->
+<!--
 <NavigationHeader />
+-->
 
 <!--
     Container for all the notifications
@@ -36,4 +45,8 @@
 <Notifications />
 
 <!-- Main content of the page -->
+<button on:click={toggleTheme} class="btn btn-primary">
+	Switch to {theme === 'light' ? 'dark' : 'light'}
+</button>
+
 <slot />

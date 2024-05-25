@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { Button, Slideover, Loader } from '$lib/components';
+	import PricingSection from '$lib/components/page/pricing/simple-one-time/pricing-section.svelte';
 	export let data;
 
 	let openSlideover = false;
 </script>
+
+<PricingSection />
 
 <div class="mx-auto my-12 max-w-md p-4">
 	<h1 class="mb-4 text-2xl font-bold">Welcome to the application!</h1>
