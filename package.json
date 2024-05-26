@@ -18,6 +18,7 @@
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@tailwindcss/forms": "^0.5.7",
+		"@tailwindcss/typography": "^0.5.13",
 		"@types/eslint": "^8.56.0",
 		"@typescript-eslint/eslint-plugin": "^7.0.0",
 		"@typescript-eslint/parser": "^7.0.0",
@@ -43,6 +44,7 @@
 	"dependencies": {
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.43.2",
+		"shiki": "^1.6.0",
 		"zod": "^3.23.8",
 		"zod-form-data": "^2.0.2",
 		"zod-validation-error": "^3.3.0"

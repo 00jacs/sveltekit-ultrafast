@@ -7,18 +7,23 @@
 * theme. You can add more custom styles.
 */
 
+/* Set your preferred border radius */
+:root {
+	--rounded-btn: 0.3rem;
+}
+
 /* Each input will have a height of 2.25rem (36px) */
 .input {
 	@apply h-9 px-3 py-2 text-sm;
 }
 
 .btn {
-	@apply h-auto min-h-0 px-3 py-2 text-sm;
+	@apply h-auto min-h-0 px-3 py-2;
 }
 
 /* Modify this depending on your own color set */
 html[data-theme='dark'] .text-base-content-secondary {
-	@apply text-gray-300;
+	@apply text-[#c6cdd7];
 }
 
 html[data-theme='light'] .text-base-content-secondary {
