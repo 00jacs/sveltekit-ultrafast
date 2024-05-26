@@ -1,12 +1,16 @@
 <script lang="ts">
 	const examplePages = [
 		{
-			name: 'Database example',
+			name: 'PostgreSQL database with Supabase',
 			href: '/database-example'
 		},
 		{
-			name: 'Authentication',
+			name: 'Authentication with Supabase Auth',
 			href: '/auth/login'
+		},
+		{
+			name: 'Payments with Stripe',
+			href: '/payment'
 		}
 	] as const;
 </script>

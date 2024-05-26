@@ -42,9 +42,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@stripe/stripe-js": "^3.4.1",
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.43.2",
 		"shiki": "^1.6.0",
+		"stripe": "^15.8.0",
 		"zod": "^3.23.8",
 		"zod-form-data": "^2.0.2",
 		"zod-validation-error": "^3.3.0"
