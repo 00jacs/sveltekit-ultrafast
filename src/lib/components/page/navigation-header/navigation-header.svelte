@@ -63,14 +63,16 @@
 					</Button>
 				</div>
 				<div class="flex flex-shrink-0 items-center text-primary">
-					<!-- @DO: Your logo here
-					<enhanced:img
-						class="h-6 w-auto"
-						src="$lib/assets/logo.svg"
-						alt="@DO: Fill your company name" />
-                    -->
-					<!-- @DO: Remove temporary logo -->
-					<span class="font-mono text-sm font-semibold">ultrafast</span>
+					<a href="/">
+						<!-- @DO: Your logo here
+                        <enhanced:img
+                            class="h-6 w-auto"
+                            src="$lib/assets/logo.svg"
+                            alt="@DO: Fill your company name" />
+                        -->
+						<!-- @DO: Remove temporary logo -->
+						<span class="block font-mono text-sm font-semibold"> ultrafast </span>
+					</a>
 				</div>
 				<div class="hidden md:ml-6 md:flex md:items-center md:space-x-4">
 					{#each links as link}
@@ -132,7 +134,6 @@
 	{#if mobileMenuOpen}
 		<div class="absolute w-full md:hidden" id="mobile-menu" transition:fade>
 			<div class="space-y-1 bg-base-100 px-2 pb-3 pt-2 shadow sm:px-3">
-				<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
 				{#each links as link}
 					<a
 						href={link.href}

@@ -30,7 +30,8 @@ export default {
 					primary: '#5491fb', // '#007FFF', // '#083D77', // '#2A4494',
 					'primary-content': '#FFFFFF',
 					base: '#1a1a1a',
-					'base-200': '#3A3A3A',
+					'base-100': '#1a1a1a',
+					'base-200': '#232323',
 					'base-300': '#4A4A4A',
 					'base-content': '#FFFFFF'
 				}

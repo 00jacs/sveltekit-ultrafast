@@ -1,3 +1,16 @@
+<script lang="ts">
+	const examplePages = [
+		{
+			name: 'Database example',
+			href: '/database-example'
+		},
+		{
+			name: 'Authentication',
+			href: '/auth/login'
+		}
+	] as const;
+</script>
+
 <section id="hero" class="mx-auto my-12 max-w-2xl px-4 py-12 text-center">
 	<h1 class="mb-3 text-4xl font-bold">
 		Welcome to
@@ -13,4 +26,18 @@
 		<a href="#do" class="btn btn-outline border-base-300">Follow on Twitter</a>
 		<a href="/get-started" class="btn btn-primary">Get started</a>
 	</div>
+</section>
+
+<section id="examples" class="mx-auto max-w-2xl text-center">
+	<h2 class="mb-3 text-3xl font-bold">Example pages</h2>
+
+	<ul>
+		{#each examplePages as page}
+			<li class="mb-2">
+				<a href={page.href} class="text-base-content-secondary link no-underline">
+					{page.name}
+				</a>
+			</li>
+		{/each}
+	</ul>
 </section>
