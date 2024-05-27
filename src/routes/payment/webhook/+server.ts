@@ -8,9 +8,6 @@ import logger from '$lib/utils/logger';
 
 const stripe = new Stripe(PRIVATE_STRIPE_SECRET_KEY);
 
-// Use body-parser to retrieve the raw body as a buffer
-// const bodyParser = require('body-parser'); this may be crucial - think
-
 function fulfillOrder(lineItems: Stripe.ApiList<Stripe.LineItem>) {
 	console.log('Fullfilling order: ', lineItems);
 }
