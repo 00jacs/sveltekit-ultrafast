@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Button from '$lib/components/common/button/button.svelte';
+	import PricingSection from '$lib/components/page/pricing/simple-one-time/pricing-section.svelte';
 </script>
 
 <form action="?/checkout" method="POST">
-	<Button type="submit" class="btn-primary">Pay $10</Button>
+	<PricingSection />
 </form>
