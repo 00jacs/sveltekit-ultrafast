@@ -44,6 +44,7 @@
 	"dependencies": {
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.43.2",
+		"axios": "^1.7.2",
 		"shiki": "^1.6.0",
 		"zod": "^3.23.8",
 		"zod-form-data": "^2.0.2",

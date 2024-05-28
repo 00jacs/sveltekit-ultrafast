@@ -1,4 +1,5 @@
 import type { LayoutServerLoad } from './$types';
+import { THEME_KEY, DEFAULT_THEME } from '$lib/stores/theme';
 
 /*
  * We need to have the session available in the layout on the client side
@@ -6,8 +7,9 @@ import type { LayoutServerLoad } from './$types';
  * the user is not logged in so DO NOT REMOVE THIS unless you plan
  * not to use authentication.
  */
-export const load: LayoutServerLoad = async ({ locals: { session } }) => {
+export const load: LayoutServerLoad = async ({ cookies, locals: { session } }) => {
 	return {
-		session
+		session,
+		theme: cookies.get(THEME_KEY) || DEFAULT_THEME
 	};
 };
