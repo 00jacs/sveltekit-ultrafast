@@ -4,6 +4,8 @@
 	import { invalidateAll } from '$app/navigation';
 	import { supabase } from '$lib/supabase';
 	import { Notifications } from '$lib/components';
+	import { Theme, theme } from '$lib/stores/theme';
+	import { browser } from '$app/environment';
 	import NavigationHeader from '$lib/components/page/navigation-header/navigation-header.svelte';
 
 	/**
@@ -20,6 +22,16 @@
 
 		return () => subscription?.unsubscribe();
 	});
+
+	export let data;
+
+	if (data.theme === Theme.LIGHT || data.theme === Theme.DARK) {
+		theme.set(data.theme);
+
+		if (browser) {
+			document.documentElement.setAttribute('data-theme', data.theme);
+		}
+	}
 </script>
 
 <!--

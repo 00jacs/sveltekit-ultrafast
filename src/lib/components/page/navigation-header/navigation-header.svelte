@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { page } from '$app/stores';
-	import { browser } from '$app/environment';
 	import { Bars3, Icon, Plus, XMark, Sun, Moon } from 'svelte-hero-icons';
 	import { Button } from '$lib/components';
+	import { theme, Theme, toggleTheme } from '$lib/stores/theme';
 
 	// @DO: Replace those links with your own
 	const links = [
@@ -26,14 +26,7 @@
 	] as const;
 
 	let mobileMenuOpen = false;
-	let isLightTheme = false;
-
-	$: if (browser) {
-		document?.documentElement?.setAttribute(
-			'data-theme',
-			isLightTheme ? 'light' : 'dark'
-		);
-	}
+	let isLightTheme = $theme === Theme.LIGHT;
 </script>
 
 <nav>
@@ -122,7 +115,12 @@
 
 				<!-- Theme toggle -->
 				<label class="swap swap-rotate ml-3">
-					<input type="checkbox" class="hidden" bind:checked={isLightTheme} />
+					<input
+						type="checkbox"
+						class="hidden"
+						checked={isLightTheme}
+						on:change={toggleTheme} />
+
 					<Icon src={Sun} class="swap-on h-5 w-5 fill-current" />
 					<Icon src={Moon} class="swap-off h-5 w-5 fill-current" />
 				</label>
