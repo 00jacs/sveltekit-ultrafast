@@ -49,7 +49,8 @@
 
 	<!-- Main content and the form-->
 	<main class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-		<div class="bg-base-200 px-6 py-10 shadow sm:rounded-lg sm:px-12">
+		<div
+			class="border border-base-200 bg-white bg-opacity-[2%] px-6 py-10 shadow sm:rounded-lg sm:px-12">
 			{#if form?.message}
 				<div class="mb-6 flex gap-2 rounded text-error">
 					<Icon src={ExclamationCircle} class="h-5 w-5" />
@@ -121,7 +122,7 @@
 						<div class="w-full border-t border-base-300"></div>
 					</div>
 					<div class="relative flex justify-center text-sm font-medium leading-6">
-						<span class="bg-base-200 px-6">Or continue with</span>
+						<span class="bg-base-100 px-6">Or continue with</span>
 					</div>
 				</div>
 
@@ -148,16 +149,14 @@
 				Not a member?
 				<a
 					href="/auth/register"
-					class="font-semibold leading-6 text-primary hover:text-secondary">
+					class="link link-primary font-semibold leading-6 no-underline">
 					Register.
 				</a>
 			</p>
 		{:else}
 			<p class="mt-10 text-center text-sm">
 				Already a member?
-				<a
-					href="/auth/login"
-					class="font-semibold leading-6 text-primary hover:text-secondary">
+				<a href="/auth/login" class="link link-primary leading-6 no-underline">
 					Sign in.
 				</a>
 			</p>

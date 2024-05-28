@@ -31,7 +31,7 @@ export default {
 					'primary-content': '#FFFFFF',
 					base: '#1a1a1a',
 					'base-100': '#1a1a1a',
-					'base-200': '#232323',
+					'base-200': '#353535',
 					'base-300': '#4A4A4A',
 					'base-content': '#FFFFFF'
 				}
