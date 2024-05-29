@@ -16,8 +16,8 @@
 			href: '/team'
 		},
 		{
-			name: 'Contact',
-			href: '/contact'
+			name: 'Blog',
+			href: '/blog'
 		},
 		{
 			name: 'Login',
@@ -72,7 +72,11 @@
 						<a
 							href={link.href}
 							class="rounded-md px-3 py-2 text-sm font-medium hover:bg-base-300
-                                {$page.url.pathname === link.href ? 'text-primary' : ''}">
+                                {link.href === '/'
+								? $page.url.pathname === '/'
+								: $page.url.pathname.startsWith(link.href)
+									? 'text-primary'
+									: ''}">
 							{link.name}
 						</a>
 					{/each}

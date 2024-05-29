@@ -42,10 +42,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@contentful/rich-text-html-renderer": "^16.5.2",
 		"@stripe/stripe-js": "^3.4.1",
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.43.2",
 		"axios": "^1.7.2",
+		"contentful": "^10.11.6",
 		"shiki": "^1.6.0",
 		"stripe": "^15.8.0",
 		"zod": "^3.23.8",

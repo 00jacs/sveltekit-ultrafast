@@ -1,6 +1,7 @@
 import { get, writable } from 'svelte/store';
 import { browser } from '$app/environment';
 import axios from 'axios';
+import logger from '$lib/utils/logger';
 
 export enum Theme {
 	LIGHT = 'light',
@@ -14,9 +15,8 @@ export const THEME_KEY = 'sveltekit_theme_cookie';
 async function cacheTheme(value: Theme) {
 	try {
 		await axios.post(`/theme?theme=${value}`);
-		console.log('success');
 	} catch (e) {
-		console.log(e);
+		logger.error('[theme] Could not cache the theme: ', e);
 	}
 }
 
