@@ -11,6 +11,10 @@
 		{
 			name: 'Payments with Stripe',
 			href: '/payment'
+		},
+		{
+			name: 'Blog with Contentful',
+			href: '/blog'
 		}
 	] as const;
 </script>
