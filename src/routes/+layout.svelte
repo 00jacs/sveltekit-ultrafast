@@ -6,6 +6,8 @@
 	import { Notifications } from '$lib/components';
 	import { Theme, theme } from '$lib/stores/theme';
 	import { browser } from '$app/environment';
+
+	import GoogleAnalytics from '$lib/components/page/analytics/analytics.svelte';
 	import NavigationHeader from '$lib/components/page/navigation-header/navigation-header.svelte';
 
 	/**
@@ -33,6 +35,15 @@
 		}
 	}
 </script>
+
+<!--
+    @do: Google Analytics script to track page views
+    You can customize it to fit your needs.
+    Fill in your PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID in .env
+    to track you project. If you don't want to track it,
+    remove this component.
+-->
+<GoogleAnalytics />
 
 <!--
     Navigation header with the logo and the navigation links
