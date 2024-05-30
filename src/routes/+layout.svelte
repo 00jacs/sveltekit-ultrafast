@@ -9,6 +9,7 @@
 
 	import GoogleAnalytics from '$lib/components/page/analytics/analytics.svelte';
 	import NavigationHeader from '$lib/components/page/navigation-header/navigation-header.svelte';
+	import MinimalFooter from '$lib/components/page/footer/minimal-footer.svelte';
 
 	/**
 	 * Listen for changes in authentication state
@@ -60,3 +61,10 @@
 
 <!-- Main content of the page -->
 <slot />
+
+<!--
+    Minimal footer with links to the documentation,
+    authentication, database, payments, blog, and analytics
+    You can customize it to fit your needs.
+-->
+<MinimalFooter />
