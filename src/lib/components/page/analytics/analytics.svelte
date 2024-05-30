@@ -23,6 +23,13 @@
 		}
 
 		gtag('js', new Date());
-		gtag('config', PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID);
+
+		/*
+		 * @DO: Replace {PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID} with your own
+		 * measurement ID, e.g. G-XXXXXXXXXX
+		 * Scripts in Svelte are not reactive and thus we can't use $env
+		 * to access the environment variables easily here.
+		 */
+		gtag('config', '{PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}');
 	</script>
 </svelte:head>
