@@ -15,6 +15,10 @@
 		{
 			name: 'Blog with Contentful',
 			href: '/blog'
+		},
+		{
+			name: 'Tracking events with Google Analytics',
+			href: '/analytics'
 		}
 	] as const;
 </script>

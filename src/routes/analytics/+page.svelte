@@ -1,21 +1,13 @@
 <script lang="ts">
 	import { Button, notify } from '$lib/components';
+	import { fireTrackEvent } from '$lib/utils/analytics';
 
 	let counter = 0;
 
 	function handleClick() {
-		if (typeof window.gtag !== 'undefined') {
-			window.gtag('event', 'click', {
-				event_category: 'button',
-				event_label: 'signup_button',
-				value: 1
-			});
-
-			notify('success', 'Custom event logged in Google Analytics.');
-			counter++;
-		} else {
-			notify('error', 'Google Analytics has not been loaded/configured.');
-		}
+		fireTrackEvent('click', 'button', 'signup_button', 1);
+		notify('success', 'Custom event logged in Google Analytics.');
+		counter++;
 	}
 </script>
 
