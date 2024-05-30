@@ -49,6 +49,8 @@
 		"@supabase/supabase-js": "^2.43.2",
 		"axios": "^1.7.2",
 		"contentful": "^10.11.6",
+		"form-data": "^4.0.0",
+		"mailgun.js": "^10.2.1",
 		"shiki": "^1.6.0",
 		"stripe": "^15.8.0",
 		"zod": "^3.23.8",
