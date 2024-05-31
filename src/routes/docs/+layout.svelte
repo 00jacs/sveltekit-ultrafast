@@ -27,6 +27,10 @@
 				{
 					title: 'Blog',
 					href: '/docs/features/blog'
+				},
+				{
+					title: 'Payments',
+					href: '/docs/features/payments'
 				}
 			]
 		},

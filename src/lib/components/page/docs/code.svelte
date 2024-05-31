@@ -8,6 +8,9 @@
 	export let code = ''; // The code to highlight
 	export let language: 'bash' | 'typescript' | 'javascript' = 'typescript'; // Default to JavaScript
 
+	let className: string = '';
+	export { className as class };
+
 	let highlightedHtml = ''; // This will hold the HTML output from Shiki
 	let showCopiedAlert = false;
 
@@ -33,8 +36,7 @@
 	}
 </script>
 
-<!-- Using {@html} to render the raw HTML produced by Shiki -->
-<div class="rounded">
+<div class="rounded {className}">
 	<!-- Code Toolbar -->
 	<div
 		class="text-base-content-secondary flex items-center justify-between rounded-t
