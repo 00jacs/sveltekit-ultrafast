@@ -8,7 +8,9 @@
 	 * More components will be added in the future, so stay tuned!
 	 */
 	import HeroCentered from '$lib/components/page/hero/hero-centered.svelte';
+	import FeaturesSection from '$lib/components/page/features/features-left-with-image.svelte';
 	import FaqAccordion from '$lib/components/page/faq/faq-accordion.svelte';
+	import FeaturesLeftWithImage from '$lib/components/page/features/features-left-with-image.svelte';
 
 	const examplePages = [
 		{
@@ -38,7 +40,6 @@
 
 <section id="examples" class="mx-auto mb-8 max-w-2xl pb-16 text-center">
 	<h2 class="mb-3 text-2xl font-bold md:text-4xl">Example pages</h2>
-
 	<ul>
 		{#each examplePages as page}
 			<li class="mb-2">
@@ -50,7 +51,11 @@
 	</ul>
 </section>
 
-<section id="faq" class="mx-auto max-w-xl px-4 pb-16">
+<section id="features">
+	<FeaturesLeftWithImage />
+</section>
+
+<section id="faq" class="mx-auto mt-16 max-w-xl px-4 py-16">
 	<h2 class="mb-2 text-2xl font-bold md:text-4xl">Commonly asked questions</h2>
 	<p class="text-base-content-secondary mb-8">
 		If your question is not on the list, feel free to get in touch
