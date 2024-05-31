@@ -17,9 +17,14 @@
 			children: []
 		},
 		{
-			title: 'FAQ',
-			href: '/docs/faq',
-			children: []
+			title: 'Features',
+			href: '/docs/features',
+			children: [
+				{
+					title: 'Authentication',
+					href: '/docs/features/authentication'
+				}
+			]
 		},
 		{
 			title: 'Credits',
