@@ -31,13 +31,12 @@
 				{
 					title: 'Payments',
 					href: '/docs/features/payments'
+				},
+				{
+					title: 'Analytics',
+					href: '/docs/features/analytics'
 				}
 			]
-		},
-		{
-			title: 'Credits',
-			href: '/docs/credits',
-			children: []
 		}
 	];
 </script>
@@ -51,7 +50,7 @@
 				<li class="relative mb-5 mt-4">
 					<a
 						href={item.href}
-						class="link mb-3 block no-underline {$page.url.pathname.startsWith(item.href)
+						class="link mb-3 block no-underline {$page.url.pathname === item.href
 							? 'text-primary'
 							: 'text-base-content-secondary'}">
 						{item.title}
@@ -63,7 +62,10 @@
 								<li class="mb-2">
 									<a
 										href={child.href}
-										class="text-base-content-secondary link no-underline">
+										class="link no-underline
+                                            {$page.url.pathname === child.href
+											? 'text-primary'
+											: 'text-base-content-secondary'}">
 										{child.title}
 									</a>
 								</li>
