@@ -45,7 +45,7 @@
 				{question}
 			</div>
 			{#if open === i}
-				<div class="collapse-content text-sm">
+				<div class="text-base-content-secondary collapse-content">
 					<p>{answer}</p>
 				</div>
 			{/if}
