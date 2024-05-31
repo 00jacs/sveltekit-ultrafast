@@ -9,19 +9,23 @@
 	const links = [
 		{
 			name: 'What is it?',
-			href: '/'
+			href: '/',
+			external: false
 		},
 		{
-			name: 'Pricing',
-			href: '/team'
+			name: 'Documentation',
+			href: '/docs',
+			external: false
 		},
 		{
-			name: 'Blog',
-			href: '/blog'
+			name: 'Examples',
+			href: '/#examples',
+			external: false
 		},
 		{
-			name: 'Login',
-			href: '/auth/login'
+			name: 'GitHub',
+			href: 'https://github.com/jacobxcoder/sveltekit-ultrafast/',
+			external: true
 		}
 	] as const;
 
@@ -76,7 +80,8 @@
 								? $page.url.pathname === '/'
 								: $page.url.pathname.startsWith(link.href)
 									? 'text-primary'
-									: ''}">
+									: ''}"
+							target={link?.external ? '_blank' : '_self'}>
 							{link.name}
 						</a>
 					{/each}
@@ -142,7 +147,8 @@
 						class="block rounded-md px-3 py-2 text-base font-medium hover:bg-base-300
                             {$page.url.pathname === link.href
 							? 'pointer-events-none bg-primary text-primary-content hover:text-primary'
-							: ''}">
+							: ''}"
+						target={link.external ? '_blank' : '_top'}>
 						{link.name}
 					</a>
 				{/each}

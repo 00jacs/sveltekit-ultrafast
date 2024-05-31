@@ -38,7 +38,7 @@
 
 <HeroCentered />
 
-<section id="examples" class="mx-auto mb-8 max-w-2xl pb-16 text-center">
+<section id="examples" class="mx-auto mb-8 max-w-2xl pb-16 pt-16 text-center">
 	<h2 class="mb-3 text-2xl font-bold md:text-4xl">Example pages</h2>
 	<ul>
 		{#each examplePages as page}
