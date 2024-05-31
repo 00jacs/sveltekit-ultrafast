@@ -47,3 +47,12 @@ export interface BlogPost {
 		show: contentful.EntryFieldTypes.Boolean;
 	};
 }
+
+export async function getPostBySlug(slug: string) {
+	return client.getEntries<BlogPost>({
+		content_type: 'blog-post',
+		limit: 1,
+		'fields.slug': slug,
+		'fields.show': true
+	});
+}

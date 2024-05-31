@@ -23,6 +23,10 @@
 				{
 					title: 'Authentication',
 					href: '/docs/features/authentication'
+				},
+				{
+					title: 'Blog',
+					href: '/docs/features/blog'
 				}
 			]
 		},

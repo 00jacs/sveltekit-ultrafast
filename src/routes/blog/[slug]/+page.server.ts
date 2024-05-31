@@ -1,14 +1,9 @@
 import { fail } from '@sveltejs/kit';
-import { client, type BlogPost } from '../contentful';
+import { getPostBySlug } from '../contentful';
 
 export async function load({ params }) {
 	try {
-		const response = await client.getEntries<BlogPost>({
-			content_type: 'blog-post',
-			limit: 1,
-			'fields.slug': params.slug,
-			'fields.show': true
-		});
+		const response = await getPostBySlug(params.slug);
 
 		return {
 			post: response?.items?.[0]
