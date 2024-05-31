@@ -1,11 +1,13 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 	import { invalidateAll } from '$app/navigation';
+	import { browser } from '$app/environment';
+
 	import { supabase } from '$lib/supabase';
 	import { Notifications } from '$lib/components';
 	import { Theme, theme } from '$lib/stores/theme';
-	import { browser } from '$app/environment';
 
 	import GoogleAnalytics from '$lib/components/page/analytics/analytics.svelte';
 	import NavigationHeader from '$lib/components/page/navigation-header/navigation-header.svelte';
@@ -50,7 +52,9 @@
     Navigation header with the logo and the navigation links
     You can customize it to fit your needs.
 -->
-<NavigationHeader />
+{#if !$page.url.pathname.startsWith('/docs')}
+	<NavigationHeader />
+{/if}
 
 <!--
     Container for all the notifications
@@ -67,4 +71,6 @@
     authentication, database, payments, blog, and analytics
     You can customize it to fit your needs.
 -->
-<MinimalFooter />
+{#if !$page.url.pathname.startsWith('/docs')}
+	<MinimalFooter />
+{/if}

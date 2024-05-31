@@ -40,6 +40,7 @@ const supabase: Handle = async ({ event, resolve }) => {
 		const {
 			data: { session }
 		} = await event.locals.supabase.auth.getSession();
+
 		if (!session) {
 			return { session: null, user: null };
 		}
@@ -48,6 +49,7 @@ const supabase: Handle = async ({ event, resolve }) => {
 			data: { user },
 			error
 		} = await event.locals.supabase.auth.getUser();
+
 		if (error) {
 			// JWT validation has failed
 			return { session: null, user: null };
