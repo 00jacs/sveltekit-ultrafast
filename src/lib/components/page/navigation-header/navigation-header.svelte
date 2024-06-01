@@ -41,7 +41,7 @@
 					<!-- Mobile menu button -->
 					<Button
 						type="button"
-						class="bg-transparent shadow-none"
+						class="btn-ghost bg-transparent shadow-none"
 						on:click={() => (mobileMenuOpen = !mobileMenuOpen)}
 						aria-controls="mobile-menu"
 						aria-expanded="false">

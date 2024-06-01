@@ -1,7 +1,8 @@
 <script lang="ts">
 	const hero = {
 		title: 'sveltekit-ultrafast ⚡️',
-		subtitle: 'A blazing fast SvelteKit template with Tailwind CSS and TypeScript.',
+		subtitle: `A blazing fast SvelteKit boilerplate with TailwindCSS, DaisyUI & TypeScript.
+            Authentication (Supabase), payments (Stripe), blog (Contentful) are ready-to-go.`,
 		note: {
 			text: 'See how it helps you build start-ups',
 			link: 'https://x.com/jacob_the_coder',

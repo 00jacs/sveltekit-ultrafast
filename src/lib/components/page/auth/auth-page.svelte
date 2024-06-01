@@ -32,7 +32,7 @@
 	};
 </script>
 
-<div class="flex min-h-full flex-col justify-center py-10 sm:px-6 lg:px-8">
+<div class="flex min-h-full flex-col justify-center px-8 py-10 sm:px-6">
 	<!-- Header with title and your logo -->
 	<header class="sm:mx-auto sm:w-full sm:max-w-md">
 		<!-- @DO: Your logo here
@@ -50,7 +50,7 @@
 	<!-- Main content and the form-->
 	<main class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
 		<div
-			class="border border-base-200 bg-white bg-opacity-[2%] px-6 py-10 shadow sm:rounded-lg sm:px-12">
+			class="rounded-lg border border-base-200 bg-white bg-opacity-[2%] px-6 py-10 shadow sm:px-12">
 			{#if form?.message}
 				<div class="mb-6 flex gap-2 rounded text-error">
 					<Icon src={ExclamationCircle} class="h-5 w-5" />
