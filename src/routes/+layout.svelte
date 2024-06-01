@@ -9,7 +9,7 @@
 	import { Notifications } from '$lib/components';
 	import { Theme, theme } from '$lib/stores/theme';
 
-	import GoogleAnalytics from '$lib/components/page/analytics/analytics.svelte';
+	import { PlausibleAnalytics, GoogleAnalytics } from '$lib/components/page/analytics';
 	import NavigationHeader from '$lib/components/page/navigation-header/navigation-header.svelte';
 	import MinimalFooter from '$lib/components/page/footer/minimal-footer.svelte';
 
@@ -48,9 +48,15 @@
     You can customize it to fit your needs.
     Fill in your PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID in .env
     to track you project. If you don't want to track it,
-    remove this component.
+    remove this component. You can also use Plausible Analytics
+    (which does not require a cookie consent).
 -->
+
+<!--
 <GoogleAnalytics />
+-->
+
+<PlausibleAnalytics />
 
 <!--
     Navigation header with the logo and the navigation links
