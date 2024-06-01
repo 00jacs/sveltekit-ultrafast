@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 	import { Button } from '$lib/components';
 	import { theme, Theme, toggleTheme } from '$lib/stores/theme';
 	import { Icon, Bars3, XMark, Sun, Moon } from 'svelte-hero-icons';
@@ -88,9 +89,9 @@
 	let mobileMenuOpen = false;
 	let isLightTheme = $theme === Theme.LIGHT;
 
-	$: if (mobileMenuOpen) {
+	$: if (mobileMenuOpen && browser) {
 		document.body.style.overflow = 'hidden';
-	} else {
+	} else if (browser) {
 		document.body.style.overflow = 'auto';
 	}
 

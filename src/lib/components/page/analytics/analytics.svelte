@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 	import { PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID } from '$env/static/public';
 
-	if (typeof gtag !== 'undefined') {
+	if (browser && typeof gtag !== 'undefined') {
 		gtag('config', PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID, {
 			page_title: document.title,
 			page_path: $page.url.pathname
