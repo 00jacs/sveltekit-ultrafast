@@ -10,7 +10,6 @@ Setting it up is super easy:
 
 1. Create a Google Analytics project.
 2. Add your `PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID` as `.env`.
-3. Add the same measurement id to the `lib/components/page/analytics` component in the `<script>` tag.
 
 And you should be good to go! 🎉
 

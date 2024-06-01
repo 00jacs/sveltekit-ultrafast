@@ -48,8 +48,6 @@
 			code={`
 PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID=G-1EJZQZQZQZ
         `} />
-
-		<p>You also need to fill this key in the `lib/components/page/analytics`</p>
 	</div>
 
 	<p>

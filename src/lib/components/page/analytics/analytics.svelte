@@ -1,36 +1,29 @@
-<script lang="ts">
-	import { page } from '$app/stores';
-	import { browser } from '$app/environment';
-	import { PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID } from '$env/static/public';
-
-	if (browser && typeof gtag !== 'undefined') {
-		gtag('config', PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID, {
-			page_title: document.title,
-			page_path: $page.url.pathname
-		});
-	}
+<script context="module" lang="ts">
+	export const prerender = true;
 </script>
 
-<svelte:head>
-	<script
-		async
-		src="https://www.googletagmanager.com/gtag/js?id={PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}">
-	</script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID } from '$env/static/public';
 
-		function gtag() {
-			dataLayer.push(arguments);
+	type GoogleAnalyticsWindow = Window & { dataLayer: any[] };
+
+	onMount(() => {
+		if (PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID && typeof window !== 'undefined') {
+			(window as unknown as GoogleAnalyticsWindow).dataLayer =
+				(window as unknown as GoogleAnalyticsWindow).dataLayer || [];
+
+			function gtag(...args: any) {
+				(window as unknown as GoogleAnalyticsWindow).dataLayer.push(arguments);
+			}
+
+			gtag('js', new Date());
+			gtag('config', PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID);
+
+			const script = document.createElement('script');
+			script.async = true;
+			script.src = `https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}`;
+			document.head.appendChild(script);
 		}
-
-		gtag('js', new Date());
-
-		/*
-		 * @DO: Replace {PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID} with your own
-		 * measurement ID, e.g. G-XXXXXXXXXX
-		 * Scripts in Svelte are not reactive and thus we can't use $env
-		 * to access the environment variables easily here.
-		 */
-		gtag('config', '{PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID}');
-	</script>
-</svelte:head>
+	});
+</script>
