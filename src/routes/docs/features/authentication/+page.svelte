@@ -8,7 +8,9 @@
         the authentication flow in this boilerplate.">
 	<p class="mb-8">
 		The authentication flow in this boilerplate is powered by
-		<a href="https://supabase.com/" target="_blank">Supabase.</a>
+		<a href="https://supabase.com/" target="_blank" class="link link-primary">
+			Supabase.
+		</a>
 		Supabase is an open-source Firebase alternative. It provides a set of tools to build your
 		app faster and with less effort.
 	</p>
@@ -20,7 +22,9 @@
 
 		<p class="mb-4">
 			In order to start, you need to create a Supabase account. You can do that
-			<a href="https://app.supabase.io/" target="_blank">here.</a>
+			<a href="https://app.supabase.io/" target="_blank" class="link link-primary">
+				here.
+			</a>
 		</p>
 	</div>
 

@@ -8,7 +8,9 @@
         your own blog posts and put them on your website.">
 	<p class="mb-8">
 		The authentication flow in this boilerplate is powered by
-		<a href="https://contentful.com/" target="_blank">Contentful.</a>
+		<a href="https://contentful.com/" target="_blank" class="link link-primary">
+			Contentful.
+		</a>
 		It is a popular headless CMS with a free plan that allows you to create and manage your
 		content.
 	</p>
@@ -20,7 +22,12 @@
 
 		<p class="mb-4">
 			In order to start, you need to create a Contentful account. You can do that
-			<a href="https://www.contentful.com/get-started/" target="_blank">here.</a>
+			<a
+				href="https://www.contentful.com/get-started/"
+				target="_blank"
+				class="link link-primary">
+				here.
+			</a>
 		</p>
 	</div>
 

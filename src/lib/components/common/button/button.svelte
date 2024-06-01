@@ -25,7 +25,7 @@
 	{...$$restProps}
 	on:click={(e) => dispatch('click', e)}>
 	{#if loading}
-		<span class="loading loading-spinner"></span>
+		<span class="loading loading-spinner m-0 h-3 w-3 p-0"></span>
 	{/if}
 
 	<slot />

@@ -5,8 +5,10 @@
 	import { Icon, Clipboard } from 'svelte-hero-icons';
 	import { Button } from '$lib/components';
 
+	type Lang = 'html' | 'bash' | 'typescript' | 'javascript' | 'sql' | 'svelte';
+
 	export let code = ''; // The code to highlight
-	export let language: 'bash' | 'typescript' | 'javascript' = 'typescript'; // Default to JavaScript
+	export let language: Lang = 'typescript'; // Default to JavaScript
 
 	let className: string = '';
 	export { className as class };
@@ -16,7 +18,7 @@
 
 	onMount(async () => {
 		const highlighter = await getHighlighter({
-			langs: ['html', 'css', 'js', 'ts', 'bash'],
+			langs: ['html', 'svelte', 'ts', 'bash', 'sql'],
 			themes: ['nord']
 		});
 

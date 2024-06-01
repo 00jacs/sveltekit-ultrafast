@@ -35,6 +35,20 @@
 				{
 					title: 'Analytics',
 					href: '/docs/features/analytics'
+				},
+				{
+					title: 'Database',
+					href: '/docs/features/database'
+				}
+			]
+		},
+		{
+			title: 'Components',
+			href: '/docs/components',
+			children: [
+				{
+					title: 'Button',
+					href: '/docs/components/button'
 				}
 			]
 		}

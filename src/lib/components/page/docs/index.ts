@@ -1,5 +1,6 @@
-import DocsCode from './code.svelte';
 import DocsPage from './page.svelte';
+import DocsCode from './code.svelte';
 import DocsNote from './note.svelte';
+import DocsPreview from './preview.svelte';
 
-export { DocsCode, DocsPage, DocsNote };
+export { DocsPage, DocsCode, DocsNote, DocsPreview };

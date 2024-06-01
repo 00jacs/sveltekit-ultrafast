@@ -17,9 +17,10 @@
 		you can follow the steps below.
 
 		<br /><br />
-		<a href="https://plausible.io/" class="font-semibold"> Plausible Analytics </a> is also
-		a great alternative to Google Analytics. It is privacy-friendly and open-source. We plan
-		to integrate that in the upcoming future.
+		<a href="https://plausible.io/" class="link link-primary font-semibold">
+			Plausible Analytics
+		</a> is also a great alternative to Google Analytics. It is privacy-friendly and open-source.
+		We plan to integrate that in the upcoming future.
 	</DocsNote>
 
 	<div class="mb-12">
