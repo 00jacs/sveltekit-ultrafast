@@ -18,7 +18,7 @@
 	} as const;
 </script>
 
-<div class="mx-auto max-w-2xl py-16 sm:py-24 lg:py-32">
+<div class="mx-auto max-w-2xl px-8 py-16 sm:py-24 lg:py-32">
 	<div class="hidden sm:mb-8 sm:flex sm:justify-center">
 		<div
 			class="text-base-content-secondary relative rounded-full px-3
