@@ -39,6 +39,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>sveltekit-ultrafast</title>
+</svelte:head>
+
 <!--
     @do: Google Analytics script to track page views
     You can customize it to fit your needs.

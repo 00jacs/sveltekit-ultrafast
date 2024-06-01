@@ -103,3 +103,19 @@ Create an `.env` file and fill this with: `SUPABASE_PROJECT_URL, SUPABASE_PROJEC
 ### 5. Next steps
 
 Depending on your list of features, you can follow the `docs.md` files in each of the `/routes` directory or the [docs page](https://sveltekit-ultrafast.com/docs) to get started with this boilerplate.
+
+### 6. Add your favicon
+
+You can either add `favicon.[svg/png]` in your `static` directory and then add:
+
+```HTML
+<link rel="icon" href="%sveltekit.assets%favicon.png" />
+```
+
+or, for simplicity, you can replace the current emoji to set the emoji of your choice as your favicon.
+
+```HTML
+<link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{PASTE YOUR EMOJI HERE}</text></svg>" />
+```
