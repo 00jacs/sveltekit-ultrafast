@@ -47,6 +47,10 @@
 			href: '/docs/components',
 			children: [
 				{
+					title: '❗️ Read first',
+					href: '/docs/components/read-first'
+				},
+				{
 					title: 'Button',
 					href: '/docs/components/button'
 				},
