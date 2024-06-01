@@ -18,3 +18,7 @@ And you should be good to go! 🎉
 The `/analytics` route shows how you can track custom events with `gtag` and Google Analytics.
 
 But the super basic setup will still allow you to track page views on each of your pages which is also going to be super useful.
+
+## Alternative - Plausible analytics
+
+This example route shows a custom Google Analytics event, but on the [docs] (https://sveltekit-ultrafast.com/docs/features/analytics) page you can find a guide on how to set up Plausbile Analytics as well (which is recommended for privacy & cookie reasons). It's also simpler to set up.
