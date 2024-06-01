@@ -49,6 +49,30 @@
 				{
 					title: 'Button',
 					href: '/docs/components/button'
+				},
+				{
+					title: 'Checkbox',
+					href: '/docs/components/checkbox'
+				},
+				{
+					title: 'Input number',
+					href: '/docs/components/input-number'
+				},
+				{
+					title: 'Input text',
+					href: '/docs/components/input-text'
+				},
+				{
+					title: 'Loader',
+					href: '/docs/components/loader'
+				},
+				{
+					title: 'Popover',
+					href: '/docs/components/popover'
+				},
+				{
+					title: 'Slideover',
+					href: '/docs/components/slideover'
 				}
 			]
 		}

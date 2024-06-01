@@ -24,16 +24,19 @@
 					<div
 						class="min-w-screen pointer-events-auto w-screen max-w-md"
 						transition:fly={{ x: '100%', opacity: 0.5, duration: 500 }}>
-						<div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+						<div
+							class="flex h-full flex-col overflow-y-scroll border border-base-200 shadow-xl">
 							<div class="bg-primary px-4 py-6 sm:px-6">
 								<div class="flex items-center justify-between">
-									<h2 class="pr-4 text-xl font-semibold leading-6 text-white">{title}</h2>
+									<h2 class="pr-4 text-xl font-semibold leading-6 text-primary-content">
+										{title}
+									</h2>
 									<button type="button" on:click={() => (open = false)}>
 										<Icon src={XMark} color="white" size="1.6rem" />
 									</button>
 								</div>
 								<div class="mt-1 pr-4">
-									<p class="text-sm text-white/90">{subtitle}</p>
+									<p class="text-sm text-primary-content text-opacity-80">{subtitle}</p>
 								</div>
 							</div>
 							<div class="relative flex-1 px-4 py-6 sm:px-6">
