@@ -28,18 +28,17 @@ In case you have any suggestions, feel free to create an issue on this repositor
 
 Also, if you love this work and it helped you make money, you can follow me on [Twitter](https://x.com/gillbatesdev) for more. And, please, share your story! I'd love to hear success/failure stories about your apps.
 
-## IN-PROGRESS
+## Documentation
 
-The repository is still in progress. These are the things that will have to be completed:
+Each of the features have a `docs.md` file with setup guide:
 
-- payments (Stripe)
-- mailing service (Mailgun/Mailchimp)
-- UI block samples for: pricing, contacts, landing page
-- beautiful UI kit with more elements (DaisyUI-based)
+- **blog**: `src/routes/blog/docs.md`
+- **auth**: `src/routes/auth/docs.md`
+- **analytics**: `src/routes/analytics/docs.md`
+- **database**: `src/routes/database-example/docs.md`
+- **payment**: `src/routes/payment/docs.md`
 
-## On the way
-
-In the upcoming future, I will be creating a landing page with full documentation and tips for this boilerplate. Also, I will be adding more blocks/templates to make it even faster to create web apps.
+Additionally, documentation can be found here: [sveltekit-ultrafast.com/docs](https://sveltekit-ultrafast.com/docs).
 
 ---
 
@@ -64,14 +63,18 @@ For database, we use [Supabase](https://supabase.com/database) which provides hu
 
 Using Stripe for handling payments - most effortless to set up, it literally takes 5 minutes.
 
-## 1. Adjust prettier/eslint settings (optional)
+--
+
+## Setup
+
+### 1. Adjust prettier/eslint settings (optional)
 
 If the prefer a different prettier/eslint configuration, feel free to adjust it:
 
 - `.eslintrc.cjs` to update all the eslint rules
 - `.prettierrc` for all the prettier code formatting rules
 
-## 2. Update VSCode settings for optimal development experience (recommended)
+### 2. Update VSCode settings for optimal development experience (recommended)
 
 Paste this in your `settings.json` in VSCode:
 
@@ -87,16 +90,16 @@ Paste this in your `settings.json` in VSCode:
 This will automatically take care of the Prettier formatting based on the specified `.prettierrc` configuration.
 This will make sure that all the code throughout your application is properly formatted so that you don't have to worry about that and make the entire development process much faster.
 
-## 3. Install all the dependencies
+### 3. Install all the dependencies
 
 Run `npm i` when in the `sveltekit-asap-boilerplate` directory.
 
-## 4. Create a supabase project
+### 4. Create a supabase project
 
 Register your project on [Supabase](https://supabase.com/) if you plan to have authentication & database-related features.
 
 Create an `.env` file and fill this with: `SUPABASE_PROJECT_URL, SUPABASE_PROJECT_API_KEY` which you can easily get after you create a free project on Supabase.
 
-## 5. Next steps
+### 5. Next steps
 
-This is not yet fully ready, but you can follow the `docs.md` files in each of the `/routes` directory to get started with this boilerplate.
+Depending on your list of features, you can follow the `docs.md` files in each of the `/routes` directory or the [docs page](https://sveltekit-ultrafast.com/docs) to get started with this boilerplate.
