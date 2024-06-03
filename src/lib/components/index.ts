@@ -5,6 +5,7 @@ import Checkbox from './common/checkbox/checkbox.svelte';
 import Popover from './common/popover/popover.svelte';
 import Slideover from './common/slideover/slideover.svelte';
 import Loader from './common/loader/loader.svelte';
+import Dialog from './common/dialog/dialog.svelte';
 
 // A standard notifications container component,
 // with a store and a function to add notifications
@@ -23,6 +24,7 @@ export {
 	Popover,
 	Slideover,
 	Loader,
+	Dialog,
 	NavigationHeader,
 	Notifications,
 	notify

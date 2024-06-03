@@ -59,6 +59,10 @@
 					href: '/docs/components/button'
 				},
 				{
+					title: 'Dialog',
+					href: '/docs/components/dialog'
+				},
+				{
 					title: 'Checkbox',
 					href: '/docs/components/checkbox'
 				},

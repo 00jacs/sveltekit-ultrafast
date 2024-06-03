@@ -27,7 +27,7 @@
 `} />
 
 	<DocsPreview class="mb-8">
-		<div class="flex gap-2">
+		<div class="flex flex-wrap gap-2">
 			<Button class="btn-primary">Click me</Button>
 			<Button class="btn-outline border-base-200">Outline button</Button>
 			<Button class="btn-outline border-base-200" loading={true}>Loading button</Button>
