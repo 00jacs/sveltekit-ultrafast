@@ -139,7 +139,7 @@
 
 	<!-- Mobile menu, show/hide based on menu state. -->
 	{#if mobileMenuOpen}
-		<div class="absolute w-full md:hidden" id="mobile-menu" transition:fade>
+		<div class="absolute z-50 w-full md:hidden" id="mobile-menu" transition:fade>
 			<div class="space-y-1 bg-base-100 px-2 pb-3 pt-2 shadow sm:px-3">
 				{#each links as link}
 					<a
