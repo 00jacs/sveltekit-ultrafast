@@ -53,8 +53,9 @@
 			{#if showDangerDialog}
 				<Dialog
 					type="danger"
-					title="Danger"
-					message="This is a danger dialog"
+					title="Danger dialog..."
+					message="This is a danger dialog. You're trying to remove something
+                        very important. Are you sure about this? This cannot be undone."
 					submitText="Proceed"
 					cancelText="Cancel"
 					on:submit={() => {
@@ -71,7 +72,8 @@
 				<Dialog
 					type="success"
 					title="Success"
-					message="This is a success dialog"
+					message="This is a success dialog. Congratulations that
+                        you've managed to get there! Would you be willing to proceed?"
 					submitText="Proceed"
 					cancelText="Cancel"
 					on:submit={() => {
