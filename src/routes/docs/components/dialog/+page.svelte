@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { Button, Dialog } from '$lib/components';
-	import { DocsPage, DocsCode, DocsNote, DocsPreview } from '$lib/components/page/docs';
+	import { DocsPage, DocsCode, DocsPreview } from '$lib/components/page/docs';
 
-	let showDialog = false;
+	let showDangerDialog = false;
+	let showSuccessDialog = false;
 </script>
 
 <DocsPage title="Dialog">
@@ -36,14 +37,20 @@
 `} />
 
 	<DocsPreview class="mb-8">
-		<div class="flex gap-2">
+		<div class="flex flex-wrap gap-2">
 			<Button
 				class="btn-outline border-base-200"
-				on:click={() => (showDialog = !showDialog)}>
-				Toggle dialog visibility
+				on:click={() => (showDangerDialog = !showDangerDialog)}>
+				Show "danger" dialog
 			</Button>
 
-			{#if showDialog}
+			<Button
+				class="btn-outline border-base-200"
+				on:click={() => (showSuccessDialog = !showSuccessDialog)}>
+				Show "success" dialog
+			</Button>
+
+			{#if showDangerDialog}
 				<Dialog
 					type="danger"
 					title="Danger"
@@ -52,11 +59,28 @@
 					cancelText="Cancel"
 					on:submit={() => {
 						console.log('Proceed');
-						showDialog = false;
+						showDangerDialog = false;
 					}}
 					on:cancel={() => {
 						console.log('Cancelled');
-						showDialog = false;
+						showDangerDialog = false;
+					}} />
+			{/if}
+
+			{#if showSuccessDialog}
+				<Dialog
+					type="success"
+					title="Success"
+					message="This is a success dialog"
+					submitText="Proceed"
+					cancelText="Cancel"
+					on:submit={() => {
+						console.log('Proceed');
+						showSuccessDialog = false;
+					}}
+					on:cancel={() => {
+						console.log('Cancelled');
+						showSuccessDialog = false;
 					}} />
 			{/if}
 		</div>
