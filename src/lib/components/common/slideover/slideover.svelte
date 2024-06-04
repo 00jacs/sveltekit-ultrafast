@@ -15,14 +15,14 @@
 	const dispatch = createEventDispatcher();
 </script>
 
-<div class="relative" style="z-index: 45;">
+<div class="relative" style="z-index: 100;">
 	{#if open}
 		<div class="fixed inset-0"></div>
 		<div class="fixed inset-0 overflow-hidden">
 			<div class="absolute inset-0 overflow-hidden">
 				<div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
 					<div
-						class="min-w-screen pointer-events-auto w-screen max-w-md"
+						class="min-w-screen pointer-events-auto w-screen max-w-md bg-base-100"
 						transition:fly={{ x: '100%', opacity: 0.5, duration: 500 }}>
 						<div
 							class="flex h-full flex-col overflow-y-scroll border border-base-200 shadow-xl">
